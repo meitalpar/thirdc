@@ -97,7 +97,7 @@ printf("\n");
           continue;
          }
          
-        char string[1024]= " " ;
+        char string[TXT]= " " ;
         int start = 0 ;
         int counter = sizeArrWord;
         strcpy(temp, word);
@@ -120,7 +120,7 @@ printf("\n");
                 
                 for (int t = 0; t < sizeof(temp); t++) {
 
-                    if(c == 32){
+                    if(c == 32 && counter!=0){
                         
                        string[start++] = 32;
                        break;
