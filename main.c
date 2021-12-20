@@ -43,7 +43,7 @@ int geoValue(char c){
 int help (char text[], int i,int sum){
     int j=0;
     int sumcheck=0;
-    while (sumcheck<sum){
+    while (sumcheck<sum && i<strlen(text)){
         int isdig=text[i];
         if((isdig>=97 && isdig <=122) || (isdig>=65 && isdig<= 90)){
         isdig= geoValue(text[i]);
@@ -57,7 +57,7 @@ int help (char text[], int i,int sum){
         
     }
     
-  return 0; 
+  return -1; 
 }
 
 
@@ -187,10 +187,10 @@ int main()
      printf("Gematria Sequences: ");
     while(i< strlen(text)){
      int isdig=text[i];
-     int counter=0;
+     int counter=-1;
         if((isdig>=97 && isdig <=122) || (isdig>=65 && isdig<= 90)){
         counter=help(text,i,sum);}
-        if (counter!=0){
+        if (counter!=-1){
         if(pa ==0){
         pa++;
         }
